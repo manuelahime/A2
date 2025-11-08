@@ -11,12 +11,7 @@ import matplotlib.pyplot as plt
 # --- Carrega modelo Spacy ---
 @st.cache_resource
 def carregar_spacy():
-    try:
-        return spacy.load("pt_core_news_sm")
-    except OSError:
-        from spacy.cli import download
-        download("pt_core_news_sm")
-        return spacy.load("pt_core_news_sm")
+    return spacy.load("pt_core_news_sm")
 
 nlp = carregar_spacy()
 
